@@ -18,7 +18,7 @@ public class OrderZKController {
 
     @GetMapping(value = "/consumer/payment/zk")
     public String paymentInfo(){
-        System.out.println("url="+INVOKE_URL+"/Payment/payment/zk");
+        System.out.println();
         String result = restTemplate.getForObject(INVOKE_URL+"/Payment/payment/zk",String.class);
         return result;
     }

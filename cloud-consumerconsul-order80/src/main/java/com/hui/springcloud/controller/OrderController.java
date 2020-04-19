@@ -8,6 +8,7 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 @Slf4j
 public class OrderController {
+
     final RestTemplate restTemplate;
 
     public static final String INVOKE_URL = "http://consul-provider-payment";
@@ -19,6 +20,7 @@ public class OrderController {
     @GetMapping(value = "/consumer/payment/consul")
     public String paymentInfo(){
         String result = restTemplate.getForObject(INVOKE_URL+"/payment/consul",String.class);
+        //String result = restTemplate.getForObject(INVOKE_URL+"/payment/consul",String.class);
         return result;
     }
 }
