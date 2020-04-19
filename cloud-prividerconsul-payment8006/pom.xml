@@ -9,14 +9,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-provider-payment8001</artifactId>
+    <artifactId>cloud-prividerconsul-payment8006</artifactId>
+
     <dependencies>
-        <!--eureka-client-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <artifactId>spring-cloud-starter-consul-discovery</artifactId>
         </dependency>
-
         <dependency>
             <groupId>com.hui.springcloud</groupId>
             <artifactId>cloud-api-commons</artifactId>
@@ -65,6 +64,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
 
 </project>

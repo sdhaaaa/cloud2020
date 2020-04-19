@@ -1,0 +1,22 @@
+server:
+  port: 8006
+spring:
+  application:
+    name: consul-provider-payment
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource      #当前数据源操作类型
+    driver-class-name: com.mysql.jdbc.Driver        #mysql驱动包
+    url: jdbc:mysql://192.168.0.107:3307/test?useUnicode=true&characterEncoding-utr-8&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+  cloud:
+    consul:
+      host: 192.168.0.107
+      port: 8500
+      healthCheckInterval: 15s
+      discovery:
+        service-name: ${spring.application.name}
+        register: true
+        port: ${server.port}
+        ip-address: ${spring.cloud.client.ip-address}
+        prefer-ip-address: true
